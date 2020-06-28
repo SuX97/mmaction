@@ -116,6 +116,7 @@ class BasicBlock3d(nn.Module):
     def forward(self, x):
 
         def _inner_forward(x):
+            """Forward wrapper for utilizing checkpoint."""
             identity = x
 
             out = self.conv1(x)
@@ -263,6 +264,7 @@ class Bottleneck3d(nn.Module):
     def forward(self, x):
 
         def _inner_forward(x):
+            """Forward wrapper for utilizing checkpoint."""
             identity = x
 
             out = self.conv1(x)
@@ -625,6 +627,9 @@ class ResNet3d(nn.Module):
                         f': {remaining_names}')
 
     def _make_stem_layer(self):
+        """Constructing the stem layer consists of a conv+norm+act module and
+            a pooling layer.
+        """
         self.conv1 = ConvModule(
             self.in_channels,
             self.base_channels,
@@ -644,6 +649,9 @@ class ResNet3d(nn.Module):
         self.pool2 = nn.MaxPool3d(kernel_size=(2, 1, 1), stride=(2, 1, 1))
 
     def _freeze_stages(self):
+        """Preventing all the parameters from being optimized
+            before `self.frozen_stages`.
+        """
         if self.frozen_stages >= 0:
             self.conv1.eval()
             for param in self.conv1.parameters():
@@ -656,6 +664,9 @@ class ResNet3d(nn.Module):
                 param.requires_grad = False
 
     def init_weights(self):
+        """Initiating the parameters either from existing checkpoint or from
+            scratch.
+        """
         if isinstance(self.pretrained, str):
             logger = get_root_logger()
             logger.info(f'load model from: {self.pretrained}')

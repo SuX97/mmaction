@@ -17,6 +17,9 @@ class ResNet2Plus1d(ResNet3d):
         assert self.conv_cfg['type'] == 'Conv2plus1d'
 
     def _freeze_stages(self):
+        """Preventing all the parameters from being optimized
+            before `self.frozen_stages`.
+        """
         if self.frozen_stages >= 0:
             self.conv1.eval()
             for param in self.conv1.parameters():

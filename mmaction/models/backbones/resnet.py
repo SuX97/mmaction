@@ -381,6 +381,9 @@ class ResNet(nn.Module):
         return getattr(self, self.norm1_name)
 
     def _make_stem_layer(self):
+        """Constructing the stem layer consists of a conv+norm+act module and
+            a pooling layer.
+        """
         self.conv1 = nn.Conv2d(
             self.in_channels,
             64,
@@ -394,6 +397,9 @@ class ResNet(nn.Module):
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
 
     def init_weights(self):
+        """Initiating the parameters either from existing checkpoint or from
+            scratch.
+        """
         if isinstance(self.pretrained, str):
             logger = get_root_logger()
             load_checkpoint(self, self.pretrained, strict=False, logger=logger)
@@ -417,6 +423,9 @@ class ResNet(nn.Module):
         return x
 
     def _freeze_stages(self):
+        """Preventing all the parameters from being optimized
+            before `self.frozen_stages`.
+        """
         if self.frozen_stages >= 0:
             self.norm1.eval()
             for m in [self.conv1, self.norm1]:

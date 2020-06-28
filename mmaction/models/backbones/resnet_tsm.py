@@ -155,6 +155,9 @@ class ResNetTSM(ResNet):
             raise NotImplementedError
 
     def init_weights(self):
+        """Initiating the parameters either from existing checkpoint or from
+            scratch.
+        """
         super().init_weights()
         if self.is_shift:
             self.make_temporal_shift()
