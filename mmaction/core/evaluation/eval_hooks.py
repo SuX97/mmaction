@@ -32,7 +32,7 @@ class EvalHook(Hook):
         self.eval_kwargs = eval_kwargs
 
     def after_train_epoch(self, runner):
-        """Called after every training epoch to evaluate the results"""
+        """Called after every training epoch to evaluate the results."""
         if not self.every_n_epochs(runner, self.interval):
             return
         from mmaction.apis import single_gpu_test

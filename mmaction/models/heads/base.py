@@ -61,8 +61,7 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
     @abstractmethod
     def init_weights(self):
         """Initiate the parameters either from existing checkpoint or from
-            scratch.
-        """
+        scratch."""
         pass
 
     @abstractmethod
@@ -74,8 +73,8 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
         """Calculate the loss given output `cls_score` and target `labels`.
 
         Args:
-            cls_score (Tensor): The output of the model.
-            labels (Tensor): The target output of the model.
+            cls_score (torch.Tensor): The output of the model.
+            labels (torch.Tensor): The target output of the model.
 
         Returns:
             losses (dict): A dict containing field 'loss_cls'(mandatory)

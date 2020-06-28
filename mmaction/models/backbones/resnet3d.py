@@ -114,6 +114,7 @@ class BasicBlock3d(nn.Module):
         self.relu = build_activation_layer(self.act_cfg)
 
     def forward(self, x):
+        """Defines the computation performed at every call."""
 
         def _inner_forward(x):
             """Forward wrapper for utilizing checkpoint."""
@@ -262,6 +263,7 @@ class Bottleneck3d(nn.Module):
         self.relu = build_activation_layer(self.act_cfg)
 
     def forward(self, x):
+        """Defines the computation performed at every call."""
 
         def _inner_forward(x):
             """Forward wrapper for utilizing checkpoint."""
@@ -531,7 +533,7 @@ class ResNet3d(nn.Module):
 
     def _inflate_conv_params(self, conv3d, state_dict_2d, module_name_2d,
                              inflated_param_names):
-        """Inflate a conv module from 2d to 3d
+        """Inflate a conv module from 2d to 3d.
 
         Args:
             conv3d (nn.Module): The destination conv3d module.
@@ -556,7 +558,7 @@ class ResNet3d(nn.Module):
 
     def _inflate_bn_params(self, bn3d, state_dict_2d, module_name_2d,
                            inflated_param_names):
-        """Inflate a norm module from 2d to 3d
+        """Inflate a norm module from 2d to 3d.
 
         Args:
             bn3d (nn.Module): The destination bn3d module.
@@ -627,9 +629,8 @@ class ResNet3d(nn.Module):
                         f': {remaining_names}')
 
     def _make_stem_layer(self):
-        """Construct the stem layer consists of a conv+norm+act module and
-            a pooling layer.
-        """
+        """Construct the stem layer consists of a conv+norm+act module and a
+        pooling layer."""
         self.conv1 = ConvModule(
             self.in_channels,
             self.base_channels,
@@ -649,9 +650,8 @@ class ResNet3d(nn.Module):
         self.pool2 = nn.MaxPool3d(kernel_size=(2, 1, 1), stride=(2, 1, 1))
 
     def _freeze_stages(self):
-        """Prevent all the parameters from being optimized
-            before `self.frozen_stages`.
-        """
+        """Prevent all the parameters from being optimized before
+        `self.frozen_stages`."""
         if self.frozen_stages >= 0:
             self.conv1.eval()
             for param in self.conv1.parameters():
@@ -665,8 +665,7 @@ class ResNet3d(nn.Module):
 
     def init_weights(self):
         """Initiate the parameters either from existing checkpoint or from
-            scratch.
-        """
+        scratch."""
         if isinstance(self.pretrained, str):
             logger = get_root_logger()
             logger.info(f'load model from: {self.pretrained}')
@@ -697,6 +696,15 @@ class ResNet3d(nn.Module):
             raise TypeError('pretrained must be a str or None')
 
     def forward(self, x):
+        """Defines the computation performed at every call.
+
+        Args:
+            x (torch.Tensor): The input data.
+
+        Returns:
+            x (torch.Tensor): The feature of the input
+                samples extracted by the backbone.
+        """
         x = self.conv1(x)
         x = self.maxpool(x)
         for i, layer_name in enumerate(self.res_layers):
@@ -707,6 +715,7 @@ class ResNet3d(nn.Module):
         return x
 
     def train(self, mode=True):
+        """Set the optimization status when training."""
         super().train(mode)
         self._freeze_stages()
         if mode and self.norm_eval:

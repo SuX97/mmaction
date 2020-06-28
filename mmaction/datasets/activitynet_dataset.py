@@ -124,7 +124,6 @@ class ActivityNetDataset(BaseDataset):
 
                 dict(video-1=[dict(segment=[1.1,2.0]. score=0.9),
                               dict(segment=[50.1, 129.3], score=0.6)])
-
         """
         result_dict = {}
         print('Convert proposals to json format')

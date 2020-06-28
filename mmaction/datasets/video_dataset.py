@@ -27,7 +27,6 @@ class VideoDataset(BaseDataset):
         some/path/003.mp4 2
         some/path/004.mp4 3
         some/path/005.mp4 3
-
     """
 
     def load_annotations(self):
