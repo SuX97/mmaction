@@ -66,6 +66,7 @@ class TSNHead(BaseHead):
         self.fc_cls = nn.Linear(self.in_channels, self.num_classes)
 
     def init_weights(self):
+        """Initiate the parameters from scratch."""
         normal_init(self.fc_cls, std=self.init_std)
 
     def forward(self, x, num_segs):

@@ -627,7 +627,7 @@ class ResNet3d(nn.Module):
                         f': {remaining_names}')
 
     def _make_stem_layer(self):
-        """Constructing the stem layer consists of a conv+norm+act module and
+        """Construct the stem layer consists of a conv+norm+act module and
             a pooling layer.
         """
         self.conv1 = ConvModule(
@@ -649,7 +649,7 @@ class ResNet3d(nn.Module):
         self.pool2 = nn.MaxPool3d(kernel_size=(2, 1, 1), stride=(2, 1, 1))
 
     def _freeze_stages(self):
-        """Preventing all the parameters from being optimized
+        """Prevent all the parameters from being optimized
             before `self.frozen_stages`.
         """
         if self.frozen_stages >= 0:
@@ -664,7 +664,7 @@ class ResNet3d(nn.Module):
                 param.requires_grad = False
 
     def init_weights(self):
-        """Initiating the parameters either from existing checkpoint or from
+        """Initiate the parameters either from existing checkpoint or from
             scratch.
         """
         if isinstance(self.pretrained, str):

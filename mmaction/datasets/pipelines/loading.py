@@ -113,7 +113,7 @@ class SampleFrames(object):
         return clip_offsets
 
     def __call__(self, results):
-        """Performing the SampleFrames loading.
+        """Perform the SampleFrames loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -250,7 +250,7 @@ class PyAVInit(object):
         self.file_client = None
 
     def __call__(self, results):
-        """Performing the PyAV initiation.
+        """Perform the PyAV initiation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -292,7 +292,7 @@ class PyAVDecode(object):
         self.multi_thread = multi_thread
 
     def __call__(self, results):
-        """Performing the PyAV loading.
+        """Perform the PyAV loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -352,7 +352,7 @@ class DecordInit(object):
         os.mkdir(self.tmp_folder)
 
     def __call__(self, results):
-        """Performing the PyAV loading.
+        """Perform the PyAV loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -400,7 +400,7 @@ class DecordDecode(object):
         pass
 
     def __call__(self, results):
-        """Performing the Decord loading.
+        """Perform the Decord loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -446,7 +446,7 @@ class OpenCVInit(object):
         os.mkdir(self.tmp_folder)
 
     def __call__(self, results):
-        """Performing the OpenCV initiation.
+        """Perform the OpenCV initiation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -487,7 +487,7 @@ class OpenCVDecode(object):
         pass
 
     def __call__(self, results):
-        """Performing the OpenCV loading.
+        """Perform the OpenCV loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -541,7 +541,7 @@ class FrameSelector(object):
         self.file_client = None
 
     def __call__(self, results):
-        """Performing the FrameSelector selecting given indices.
+        """Perform the FrameSelector selecting given indices.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -596,7 +596,7 @@ class LoadLocalizationFeature(object):
         self.raw_feature_ext = raw_feature_ext
 
     def __call__(self, results):
-        """Performing the LoadLocalizationFeature loading.
+        """Perform the LoadLocalizationFeature loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -625,7 +625,7 @@ class GenerateLocalizationLabels(object):
     """
 
     def __call__(self, results):
-        """Performing the GenerateLocalizationLabels loading.
+        """Perform the GenerateLocalizationLabels loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -686,7 +686,7 @@ class LoadProposals(object):
         self.feature_ext = feature_ext
 
     def __call__(self, results):
-        """Performing the LoadProposals loading.
+        """Perform the LoadProposals loading.
 
         Args:
             results (dict): The resulting dict to be modified and passed

@@ -61,8 +61,6 @@ class BaseDataset(Dataset, metaclass=ABCMeta):
         Args:
             results (list): Output results.
             metrics (str | sequence[str]): Metrics to be performed.
-            logger (obj): Training logger.
-            topk (int | tuple[int]): K value for top_k_accuracy metric.
             logger (logging.Logger | None): Logger for recording.
 
         Returns:

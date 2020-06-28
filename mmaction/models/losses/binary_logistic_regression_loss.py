@@ -9,6 +9,7 @@ def binary_logistic_regression_loss(reg_score,
                                     threshold=0.5,
                                     ratio_range=(1.05, 21),
                                     eps=1e-5):
+    """Binary Logistic Regression Loss."""
     label = label.view(-1).to(reg_score.device)
     reg_score = reg_score.contiguous().view(-1)
 
