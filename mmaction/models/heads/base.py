@@ -70,7 +70,7 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
         pass
 
     def loss(self, cls_score, labels):
-        """Calculate the loss given output `cls_score` and target `labels`.
+        """Calculate the loss given output ``cls_score`` and target ``labels``.
 
         Args:
             cls_score (torch.Tensor): The output of the model.

@@ -629,7 +629,7 @@ class ResNet3d(nn.Module):
                         f': {remaining_names}')
 
     def _make_stem_layer(self):
-        """Construct the stem layer consists of a conv+norm+act module and a
+        """Construct the stem layers consists of a conv+norm+act module and a
         pooling layer."""
         self.conv1 = ConvModule(
             self.in_channels,
