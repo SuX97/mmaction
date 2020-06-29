@@ -17,7 +17,7 @@ def load_video_infos(ann_file):
         ann_file (str): A json file path of the annotation file.
 
     Returns:
-        video_infos (list[dict]): A list containing annotations for videos.
+        list[dict]: A list containing annotations for videos.
     """
     video_infos = []
     anno_database = mmcv.load(ann_file)

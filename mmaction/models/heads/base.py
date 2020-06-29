@@ -77,7 +77,7 @@ class BaseHead(nn.Module, metaclass=ABCMeta):
             labels (torch.Tensor): The target output of the model.
 
         Returns:
-            losses (dict): A dict containing field 'loss_cls'(mandatory)
+            dict: A dict containing field 'loss_cls'(mandatory)
             and 'top1_acc', 'top5_acc'(optional).
         """
         losses = dict()

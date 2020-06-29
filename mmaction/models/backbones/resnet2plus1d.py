@@ -37,7 +37,7 @@ class ResNet2Plus1d(ResNet3d):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The feature of the input
+            torch.Tensor: The feature of the input
                 samples extracted by the backbone.
         """
         x = self.conv1(x)

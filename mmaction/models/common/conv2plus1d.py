@@ -89,7 +89,7 @@ class Conv2plus1d(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         x = self.conv_s(x)
         x = self.bn_s(x)

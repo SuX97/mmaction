@@ -84,7 +84,7 @@ class BasicBlock(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            out (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         identity = x
 
@@ -199,7 +199,7 @@ class Bottleneck(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            out (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
 
         def _inner_forward(x):
@@ -261,7 +261,7 @@ def make_res_layer(block,
             memory while slowing down the training speed. Default: False.
 
     Returns:
-        A residual layer for the given config.
+        nn.Module: A residual layer for the given config.
     """
     downsample = None
     if stride != 1 or inplanes != planes * block.expansion:
@@ -433,7 +433,7 @@ class ResNet(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The feature of the input
+            torch.Tensor: The feature of the input
                 samples extracted by the backbone.
         """
         x = self.conv1(x)

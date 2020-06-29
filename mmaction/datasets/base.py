@@ -64,7 +64,7 @@ class BaseDataset(Dataset, metaclass=ABCMeta):
             logger (logging.Logger | None): Logger for recording.
 
         Returns:
-            eval_results (dict): Evaluation results dict.
+            dict: Evaluation results dict.
         """
         pass
 

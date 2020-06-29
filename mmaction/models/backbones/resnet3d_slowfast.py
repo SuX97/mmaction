@@ -123,7 +123,7 @@ class ResNet3dPathway(ResNet3d):
                 Default: False.
 
         Returns:
-            layer (nn.Module): A residual layer for the given config.
+            nn.Module: A residual layer for the given config.
         """
         inflate = inflate if not isinstance(inflate,
                                             int) else (inflate, ) * blocks
@@ -434,7 +434,7 @@ class ResNet3dSlowFast(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            out (tuple[torch.Tensor]): The feature of the input
+            tuple[torch.Tensor]: The feature of the input
                 samples extracted by the backbone.
         """
         x_slow = x[:, :, ::self.resample_rate, :, :]

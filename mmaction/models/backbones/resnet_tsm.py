@@ -31,7 +31,7 @@ class TemporalShift(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            out (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         x = self.shift(x, self.num_segments, shift_div=self.shift_div)
         return self.net(x)

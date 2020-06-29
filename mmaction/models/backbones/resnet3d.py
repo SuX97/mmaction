@@ -479,7 +479,7 @@ class ResNet3d(nn.Module):
                 Default: False.
 
         Returns:
-            A residual layer for the given config.
+            nn.Module: A residual layer for the given config.
         """
         inflate = inflate if not isinstance(inflate,
                                             int) else (inflate, ) * blocks
@@ -702,7 +702,7 @@ class ResNet3d(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The feature of the input
+            torch.Tensor: The feature of the input
                 samples extracted by the backbone.
         """
         x = self.conv1(x)

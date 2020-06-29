@@ -196,7 +196,7 @@ class ActivityNetDataset(BaseDataset):
             logger (logging.Logger | None): Training logger. Defaults: None.
 
         Returns:
-            eval_results (dict): Evaluation results for evaluation metrics.
+            dict: Evaluation results for evaluation metrics.
         """
         if not isinstance(results, list):
             raise TypeError(f'results must be a list, but got {type(results)}')

@@ -54,7 +54,7 @@ class I3DHead(BaseHead):
             x (torch.Tensor): The input data.
 
         Returns:
-            cls_score (torch.Tensor): The classification scores for input
+            torch.Tensor: The classification scores for input
                 samples.
         """
         # [N, in_channels, 4, 7, 7]

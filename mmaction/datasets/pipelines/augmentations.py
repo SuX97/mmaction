@@ -106,7 +106,7 @@ class RandomCrop(object):
         self.lazy = lazy
 
     def __call__(self, results):
-        """Performing the RandomCrop augmentation.
+        """Performs the RandomCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -242,7 +242,7 @@ class RandomResizedCrop(object):
         return x_offset, y_offset, x_offset + crop_size, y_offset + crop_size
 
     def __call__(self, results):
-        """Performing the RandomResizeCrop augmentation.
+        """Performs the RandomResizeCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -348,7 +348,7 @@ class MultiScaleCrop(object):
         self.lazy = lazy
 
     def __call__(self, results):
-        """Performing the MultiScaleCrop augmentation.
+        """Performs the MultiScaleCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -487,7 +487,7 @@ class Resize(object):
         self.lazy = lazy
 
     def __call__(self, results):
-        """Performing the Resize augmentation.
+        """Performs the Resize augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -561,7 +561,7 @@ class Flip(object):
         self.lazy = lazy
 
     def __call__(self, results):
-        """Performing the Flip augmentation.
+        """Performs the Flip augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -629,7 +629,7 @@ class Normalize(object):
         self.to_bgr = to_bgr
 
     def __call__(self, results):
-        """Performing the Normalize augmentation.
+        """Performs the Normalize augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -676,7 +676,7 @@ class CenterCrop(object):
                             f'but got {type(crop_size)}')
 
     def __call__(self, results):
-        """Performing the CenterCrop augmentation.
+        """Performs the CenterCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -745,7 +745,7 @@ class ThreeCrop(object):
                             f'but got {type(crop_size)}')
 
     def __call__(self, results):
-        """Performing the ThreeCrop augmentation.
+        """Performs the ThreeCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -816,7 +816,7 @@ class TenCrop(object):
                             f'but got {type(crop_size)}')
 
     def __call__(self, results):
-        """Performing the TenCrop augmentation.
+        """Performs the TenCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -894,7 +894,7 @@ class MultiGroupCrop(object):
             raise ValueError('Groups must be positive.')
 
     def __call__(self, results):
-        """Performing the MultiGroupCrop augmentation.
+        """Performs the MultiGroupCrop augmentation.
 
         Args:
             results (dict): The resulting dict to be modified and passed

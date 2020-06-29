@@ -88,7 +88,7 @@ class TINHead(BaseHead):
             num_segs (int): Number of segments into which a video
                 is divided.
         Returns:
-            cls_score (torch.Tensor): The classification scores for input
+            torch.Tensor: The classification scores for input
                 samples.
         """
         # [N * num_segs, in_channels, 7, 7]

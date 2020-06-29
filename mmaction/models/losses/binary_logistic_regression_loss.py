@@ -54,7 +54,7 @@ class BinaryLogisticRegressionLoss(nn.Module):
                 eps (float): Epsilon for small value. Default: 1e-5.
 
         Returns:
-                loss (torch.Tensor): Returned binary logistic loss.
+                torch.Tensor: Returned binary logistic loss.
         """
 
         return binary_logistic_regression_loss(reg_score, label, threshold,

@@ -41,7 +41,7 @@ class ToTensor(object):
         self.keys = keys
 
     def __call__(self, results):
-        """Performing the ToTensor formating.
+        """Performs the ToTensor formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -69,7 +69,7 @@ class ToDataContainer(object):
         self.fields = fields
 
     def __call__(self, results):
-        """Performing the ToDataContainer formating.
+        """Performs the ToDataContainer formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -97,7 +97,7 @@ class ImageToTensor(object):
         self.keys = keys
 
     def __call__(self, results):
-        """Performing the ImageToTensor formating.
+        """Performs the ImageToTensor formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -125,7 +125,7 @@ class Transpose(object):
         self.order = order
 
     def __call__(self, results):
-        """Performing the Transpose formating.
+        """Performs the Transpose formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -191,7 +191,7 @@ class Collect(object):
         self.meta_name = meta_name
 
     def __call__(self, results):
-        """Performing the Collect formating.
+        """Performs the Collect formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed
@@ -232,7 +232,7 @@ class FormatShape(object):
                 f'The input format {self.input_format} is invalid.')
 
     def __call__(self, results):
-        """Performing the FormatShape formating.
+        """Performs the FormatShape formating.
 
         Args:
             results (dict): The resulting dict to be modified and passed

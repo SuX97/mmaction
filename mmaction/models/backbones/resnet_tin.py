@@ -22,7 +22,7 @@ def temporal_shift(data, offset, temporal_size):
             [num_segments + 2].
 
     Returns:
-        (torch.Tensor): Result tensor in shape [N, num_segments, C, H, W].
+        torch.Tensor: Result tensor in shape [N, num_segments, C, H, W].
     """
     # [N, num_segments + 2, C, H, W]
     n = data.shape[0]
@@ -133,7 +133,7 @@ class CombineNet(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         # input shape: [num_batches * num_segments, C, H, W]
         # output x shape: [num_batches * num_segments, C, H, W]
@@ -183,7 +183,7 @@ class WeightNet(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         # calculate weight
         # [N, C, T]
@@ -243,7 +243,7 @@ class OffsetNet(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         # calculate offset
         # [N, C, T]
@@ -297,7 +297,7 @@ class TemporalInterlace(nn.Module):
             x (torch.Tensor): The input data.
 
         Returns:
-            x (torch.Tensor): The output of the module.
+            torch.Tensor: The output of the module.
         """
         # [num_batches * num_segments, C, H, W]
         n, c, h, w = x.size()
@@ -401,7 +401,7 @@ class ResNetTIN(ResNet):
                 shift_div (int): Number of division parts for shift.
 
             Returns:
-                (nn.Sequential): A Sequential container consisted of
+                nn.Sequential: A Sequential container consisted of
                     deformed Interlace blocks.
             """
             blocks = list(stage.children())
